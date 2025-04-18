@@ -1,0 +1,25 @@
+service: flic-lambda
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 9000
+
+functions:
+  pdf-compression:
+    handler: src/lambda-functions/pdf-compression/handler.handler
+    events:
+      - s3:
+          bucket: flic-compress-dev
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: compressed/input/
+          existing: true
