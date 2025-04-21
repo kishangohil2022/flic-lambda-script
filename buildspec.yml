@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Installing dependencies..."
+      - npm install -g serverless
+      - npm ci
+
+  build:
+    commands:
+      - echo "Deploying with Serverless..."
+      - npm run deploy
+
+  post_build:
+    commands:
+      - echo "Deployment completed successfully."
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes

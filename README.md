@@ -6,16 +6,15 @@
 - 📘 TypeScript
 - ☁️ AWS Lambda
 - 🔧 Serverless Framework
-- 📦 esbuild (for bundling)
 
 ### 🔬 Development Dependencies
 
 - `@types/aws-lambda`: TypeScript definitions for AWS Lambda
 - `@types/node`: TypeScript definitions for Node.js
-- `esbuild`: JavaScript bundler and minifier
 - `serverless`: Serverless Framework CLI
 - `serverless-offline`: Serverless plugin for local development
 - `typescript`: TypeScript compiler
+- and more...
 
 ## 📁 Project Structure
 
